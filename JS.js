@@ -118,10 +118,7 @@ function minMax(arr) {
 }
 minMax([1, 4, 8, 2, 20]) // { max: 20, min: 1 }
 
-// *******************task_8 (average)*****************
-console.log("********************task_7 (average)********************");
+// *******************task_7 (minMax)*****************
+console.log("********************task_7 (minMax)********************");
 
-function average(arr) {
 
-}
-average([1,4,2]) // 2.33
