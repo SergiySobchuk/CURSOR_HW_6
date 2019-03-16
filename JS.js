@@ -62,8 +62,8 @@ function factorial(n) {
     }
     return fack(n);
 }
-console.log("res:" ,factorial(3)); // 6
-console.log("res:" ,factorial(5)); // 120
+console.log("factorial:" ,factorial(3)); // 6
+console.log("factorial:" ,factorial(5)); // 120
 
 
 // *******************task_5 (bombTimerRec)*****************
@@ -86,9 +86,18 @@ function bombTimerRec(str, time) {
 // bombTimerRec('Boooom', 3);
 
 // *******************task_6 (filterNumbers)*****************
-console.log("********************task_3 (filterNumbers)********************");
+console.log("********************task_6 (filterNumbers)********************");
 
-
+function filterNumbers(arr, maxNumber) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] < maxNumber){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+console.log(filterNumbers([1, 4, 8, 1, 20], 5));  // [1, 4, 1]
 
 
 
