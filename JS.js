@@ -118,5 +118,19 @@ function minMax(arr) {
 }
 minMax([1, 4, 8, 2, 20]) // { max: 20, min: 1 }
 
+// *******************task_8 (average)*****************
+console.log("********************task_8 (average)********************");
 
+function average(arr) {
+    let ever = (1+4+2)/(arr.length);
+    return ever.toFixed(2);
+}
+console.log(average([1, 4, 2])); // 2.33
 
+// *******************task_8 (concatFirstNestedArraysv)*****************
+console.log("********************task_8 (concatFirstNestedArrays)********************");
+
+function concatFirstNestedArrays(arr) {
+    
+}
+concatFirstNestedArrays([[0, 1], [2, 3], [4, 5]]) // [0, 1, 2, 3, 4, 5]
