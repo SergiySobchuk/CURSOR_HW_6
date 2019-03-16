@@ -89,7 +89,7 @@ function bombTimerRec(str, time) {
 console.log("********************task_6 (filterNumbers)********************");
 
 function filterNumbers(arr, maxNumber) {
-    let newArr = [];
+    const newArr = [];
     for(let i = 0; i < arr.length; i++){
         if (arr[i] < maxNumber){
             newArr.push(arr[i]);
@@ -99,8 +99,26 @@ function filterNumbers(arr, maxNumber) {
 }
 console.log(filterNumbers([1, 4, 8, 1, 20], 5));  // [1, 4, 1]
 
+// *******************task_7 (minMax)*****************
+console.log("********************task_7 (minMax)********************");
 
+function minMax(arr) {
+    const minMaxObj = {
+        max : arr[0],
+        min : arr[0]
+    };
+    console.log(minMaxObj);
+    for(let i = 1; i < arr.length; i++ )
+    {
+        if (arr[i] > minMaxObj.max){minMaxObj.max = arr[i]}
+        if (arr[i] < minMaxObj.min){minMaxObj.min = arr[i]}
+    }
 
+    return minMaxObj;
+}
+minMax([1, 4, 8, 2, 20]) // { max: 20, min: 1 }
 
+// *******************task_7 (minMax)*****************
+console.log("********************task_7 (minMax)********************");
 
 
