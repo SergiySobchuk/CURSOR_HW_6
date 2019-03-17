@@ -226,11 +226,24 @@ console.log(usersToObjectSpread(users));
 // *******************task_11 (filterUsersByMonth)*****************
 console.log("********************task_11 (filterUsersByMonth)********************");
 
+const usersWithoutId = [
+    { name: 'John', birthday: '1999-2-12' },
+    { name: 'Bill', birthday: '1999-1-19' },
+    { name: 'Carol', birthday: '1999-4-11' },
+    { name: 'Luce', birthday: '1999-2-22' }
+];
 
 function filterUsersByMonth(users, month) {
-
-
+    let usersMonth = [];
+    users.forEach(item => {
+        let birth = new Date(item.birthday);
+    if (birth.getMonth() + 1 ===  month){
+            usersMonth.push(item);
+        }
+    });
+    return usersMonth;
 }
-filterUsersByMonth(users, 0) // [{ name: 'Bill', birthday: '1999-1-19' }]
+console.log(filterUsersByMonth(usersWithoutId, 2)); // [{ name: 'Bill', birthday: '1999-1-19' }]
 
 
+// { id: 2, name: 'Bill', birthday: '1999-1-19' },
