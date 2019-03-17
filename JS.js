@@ -9,7 +9,7 @@ console.log("********************task_1(printTimeout)********************");
 function printTimeout(str, n) {
 setTimeout((()=> console.log(str)), n*1000);
 }
-// printTimeout('hello', 10);
+printTimeout('hello', 10);
 
 // *******************task_2(sumAll -> recursia)*****************
 console.log("********************task_2 (sumAll -> recursion)********************");
@@ -42,7 +42,7 @@ function bombTimer(str, time) {
     }
     setTimeout((()=> console.log(str)),(time + 1)*1000);
 }
-// bombTimer('Boooom', 3);
+bombTimer('Boooom', 3);
 
 
 // *******************task_4 (factorial)*****************
@@ -83,7 +83,7 @@ function bombTimerRec(str, time) {
     setTimeout((()=> console.log(str)),(time+1)*1000);
 
 }
-// bombTimerRec('Boooom', 3);
+bombTimerRec('Boooom', 3);
 
 // *******************task_6 (filterNumbers)*****************
 console.log("********************task_6 (filterNumbers)********************");
