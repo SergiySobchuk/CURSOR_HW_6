@@ -246,4 +246,62 @@ function filterUsersByMonth(users, month) {
 console.log(filterUsersByMonth(usersWithoutId, 2)); // [{ name: 'Bill', birthday: '1999-1-19' }]
 
 
-// { id: 2, name: 'Bill', birthday: '1999-1-19' },
+// *******************task_12 (getAdultNames)*****************
+console.log("********************task_12 (getAdultNames)********************");
+
+const usersTask12 = [
+    { name: 'John', birthday: '1999-6-12' },
+    { name: 'Bill', birthday: '2005-5-19' },
+    { name: 'Carol', birthday: '2003-10-11' },
+    { name: 'Luce', birthday: '2000-11-22' }
+];
+
+function getAdultNames(users) {
+    const userAdult = [];
+    users.forEach(item => {
+        const now = new Date();
+        const birthday = new Date(item.birthday);
+        const age = now.getFullYear() - birthday.getFullYear();
+        if( age > 18){
+            userAdult.push(item.name +' '+ age );
+        }
+    });
+    return userAdult.join(', ');
+
+}
+console.log(getAdultNames(usersTask12)); // 'John 19, Luce 18'
+
+
+
+// *******************task_12_2(getAdultNames->chekByMonthAndDay)*****************
+console.log("********************task_12_2 (getAdultNames->chekByMonthAndDay)********************");
+
+
+const usersTask12_2 = [
+    { name: 'John', birthday: '1999-6-12' },
+    { name: 'Bill', birthday: '2005-5-19' },
+    { name: 'Carol', birthday: '2003-10-11' },
+    { name: 'Luce', birthday: '2000-11-22' }
+];
+
+function getAdultNamesA(users) {
+    const userAdult = [];
+    let age;
+    users.forEach(item => {
+        const now = new Date();
+        const birthday = new Date(item.birthday);
+        const adultDay = new Date(birthday.getFullYear()+18, birthday.getMonth(), birthday.getDate());
+        // console.log(item.name , "adultDay", adultDay.toLocaleString('uk'));
+        if( adultDay < now){
+            if (birthday.getMonth() > now.getMonth() || (birthday.getMonth() = now.getMonth() && birthday.getDate() >= now.getDate())){
+                age = now.getFullYear() - birthday.getFullYear();
+            } else {
+                age = now.getFullYear() - birthday.getFullYear() - 1;
+            }
+            userAdult.push(item.name +' '+ age);
+        }
+});
+    return userAdult.join(', ');
+}
+console.log(getAdultNamesA(usersTask12_2)); // 'John 19, Luce 18'
+
