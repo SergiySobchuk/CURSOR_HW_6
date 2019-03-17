@@ -171,21 +171,32 @@ function concatFirstNestedArraysR(arr) {
 }
 console.log(concatFirstNestedArraysR([[0, 1], [2, 3], [4, 5]])); // [0, 1, 2, 3, 4, 5]
 
+// *******************task_9_4 (concatFirstNestedArraysv->reduceConcat)*****************
+console.log("********************task_9_4(concatFirstNestedArrays->reduceConcat)********************");
 
-// *******************task_10_concatFirstNestedArraysv->reduce)*****************
-console.log("********************task_9_3(usersToObject)********************");
+function concatFirstNestedArraysReduceConcat(arr) {
+    let result = arr.reduce((union, current) => union.concat(current));
 
+    console.log(result);
+}
+
+concatFirstNestedArraysReduceConcat([[0, 1], [2, 3], [4, 5]]) // [0, 1, 2, 3, 4, 5]
+
+
+// *******************task_10 (usersToObject)*****************
+console.log("********************task_10 (usersToObject)********************");
 const users = [
     { id: 1, name: 'John', birthday: '1999-2-12' },
     { id: 2, name: 'Bill', birthday: '1999-1-19' },
     { id: 3, name: 'Carol', birthday: '1999-3-11' },
     { id: 4, name: 'Luce', birthday: '1999-2-22' }
 ];
-
 function usersToObject(users) {
-    
+    let ObjectUsers = {};
+    users.forEach((item) => ObjectUsers[item.id] = item);
+    return ObjectUsers;
 }
-usersToObject(users)
+console.log(usersToObject(users));
 // {
 //  1: { id: 1, name: 'John', birthday: '1999-2-12' },
 //  2: { id: 2, name: 'Bill', birthday: '1999-1-19' },
@@ -194,5 +205,32 @@ usersToObject(users)
 // };
 
 
+
+// *******************task_10_2 (usersToObject -> spread)*****************
+console.log("********************task_10_2 (usersToObject -> spread)********************");
+
+function usersToObjectSpread(users) {
+    let objectOfUsers = {};
+    ({...objectOfUsers} = [...users]);
+    return objectOfUsers;
+}
+console.log(usersToObjectSpread(users));
+// {
+//  1: { id: 1, name: 'John', birthday: '1999-2-12' },
+//  2: { id: 2, name: 'Bill', birthday: '1999-1-19' },
+//  3: { id: 3, name: 'Carol', birthday: '1999-3-11' },
+//  4: { id: 4, name: 'Luce', birthday: '1999-2-22' }
+// };
+
+
+// *******************task_11 (filterUsersByMonth)*****************
+console.log("********************task_11 (filterUsersByMonth)********************");
+
+
+function filterUsersByMonth(users, month) {
+
+
+}
+filterUsersByMonth(users, 0) // [{ name: 'Bill', birthday: '1999-1-19' }]
 
 
