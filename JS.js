@@ -127,10 +127,72 @@ function average(arr) {
 }
 console.log(average([1, 4, 2])); // 2.33
 
-// *******************task_8 (concatFirstNestedArraysv)*****************
-console.log("********************task_8 (concatFirstNestedArrays)********************");
+// *******************task_9 (concatFirstNestedArraysv->for)*****************
+console.log("********************task_9 (concatFirstNestedArrays->for)********************");
 
 function concatFirstNestedArrays(arr) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr[j].length; j++){
+            newArr.push(arr[i][j]);
+        }
+    }
+    return newArr;
+}
+console.log(concatFirstNestedArrays([[0, 1], [2, 3], [4, 5]])) // [0, 1, 2, 3, 4, 5]
+
+// *******************task_9_2 (concatFirstNestedArraysv->callback)*****************
+console.log("********************task_9_2 (concatFirstNestedArrays->callback)********************");
+
+
+function concatFirstNestedArraysF(arr) {
+    let newArr = [];
+
+    const callback2 = item => newArr.push(item);
+    const callback1 = item1 => item1.forEach(callback2);
+    arr.forEach(callback1);
+
+    return newArr;
+}
+console.log(concatFirstNestedArraysF([[0, 1], [2, 3], [4, 5]])); // [0, 1, 2, 3, 4, 5]
+
+// *******************task_9_3 (concatFirstNestedArraysv->reduce)*****************
+console.log("********************task_9_3(concatFirstNestedArrays->reduce)********************");
+
+
+// function myFunction(x, y, z) { }
+// var args = [0, 1, 2];
+// myFunction(...args);
+
+
+function concatFirstNestedArraysR(arr) {
+    const res = arr.reduce((acc, elem) => [...acc, ...elem]);
+    return res;
+}
+console.log(concatFirstNestedArraysR([[0, 1], [2, 3], [4, 5]])); // [0, 1, 2, 3, 4, 5]
+
+
+// *******************task_10_concatFirstNestedArraysv->reduce)*****************
+console.log("********************task_9_3(usersToObject)********************");
+
+const users = [
+    { id: 1, name: 'John', birthday: '1999-2-12' },
+    { id: 2, name: 'Bill', birthday: '1999-1-19' },
+    { id: 3, name: 'Carol', birthday: '1999-3-11' },
+    { id: 4, name: 'Luce', birthday: '1999-2-22' }
+];
+
+function usersToObject(users) {
     
 }
-concatFirstNestedArrays([[0, 1], [2, 3], [4, 5]]) // [0, 1, 2, 3, 4, 5]
+usersToObject(users)
+// {
+//  1: { id: 1, name: 'John', birthday: '1999-2-12' },
+//  2: { id: 2, name: 'Bill', birthday: '1999-1-19' },
+//  3: { id: 3, name: 'Carol', birthday: '1999-3-11' },
+//  4: { id: 4, name: 'Luce', birthday: '1999-2-22' }
+// };
+
+
+
+
